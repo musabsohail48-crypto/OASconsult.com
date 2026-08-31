@@ -90,3 +90,106 @@
   }
 
 }
+/* =====================================================
+   OAS HERO LOGO - FINAL FIX
+   ===================================================== */
+
+.hero-mark {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 500px !important;
+  overflow: visible !important;
+}
+
+.hero-mark .mark-ring {
+  width: 430px !important;
+  height: 430px !important;
+  min-width: 430px !important;
+  min-height: 430px !important;
+
+  padding: 0 !important;
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+  background: #050608 !important;
+
+  border: 6px solid #d69b20 !important;
+
+  box-shadow:
+    0 0 0 2px #f4c95d,
+    0 0 45px rgba(214, 155, 32, 0.35) !important;
+}
+
+.hero-mark .mark-ring .hero-logo {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  background: #050608 !important;
+}
+
+/* Keep trust box beside the logo */
+.hero-mark .trust-card {
+  position: absolute !important;
+  right: -10px !important;
+  top: 150px !important;
+  z-index: 5 !important;
+}
+
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .hero-mark {
+    min-height: 430px !important;
+  }
+
+  .hero-mark .mark-ring {
+    width: 360px !important;
+    height: 360px !important;
+    min-width: 360px !important;
+    min-height: 360px !important;
+  }
+
+  .hero-mark .trust-card {
+    right: 0 !important;
+    top: auto !important;
+    bottom: 10px !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .hero-mark {
+    min-height: 360px !important;
+  }
+
+  .hero-mark .mark-ring {
+    width: 290px !important;
+    height: 290px !important;
+    min-width: 290px !important;
+    min-height: 290px !important;
+  }
+
+}
