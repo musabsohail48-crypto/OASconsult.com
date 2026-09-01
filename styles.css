@@ -193,3 +193,52 @@
   }
 
 }
+/* ===== OAS HERO LOGO FIX ===== */
+
+.hero-mark .mark-ring {
+  position: relative !important;
+  width: 430px !important;
+  height: 430px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background-color: #050608 !important;
+
+  border: 5px solid #d69b20 !important;
+
+  box-shadow:
+    0 0 0 2px #f4c95d,
+    0 0 45px rgba(214, 155, 32, 0.35) !important;
+}
+
+.hero-mark .hero-logo-image {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background-image: url("assets/oas-logo.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hero-mark .mark-ring {
+    width: 360px !important;
+    height: 360px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-mark .mark-ring {
+    width: 290px !important;
+    height: 290px !important;
+  }
+}
