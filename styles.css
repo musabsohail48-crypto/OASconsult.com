@@ -91,126 +91,25 @@
 
 }
 /* =====================================================
-   OAS HERO LOGO - FINAL FIX
-   ===================================================== */
-
-.hero-mark {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 500px !important;
-  overflow: visible !important;
-}
-
-.hero-mark .mark-ring {
-  width: 430px !important;
-  height: 430px !important;
-  min-width: 430px !important;
-  min-height: 430px !important;
-
-  padding: 0 !important;
-  border-radius: 50% !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  overflow: hidden !important;
-
-  background: #050608 !important;
-
-  border: 6px solid #d69b20 !important;
-
-  box-shadow:
-    0 0 0 2px #f4c95d,
-    0 0 45px rgba(214, 155, 32, 0.35) !important;
-}
-
-.hero-mark .mark-ring .hero-logo {
-  display: block !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  max-width: none !important;
-  max-height: none !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  object-fit: contain !important;
-  object-position: center center !important;
-
-  border: none !important;
-  border-radius: 50% !important;
-
-  background: #050608 !important;
-}
-
-/* Keep trust box beside the logo */
-.hero-mark .trust-card {
-  position: absolute !important;
-  right: -10px !important;
-  top: 150px !important;
-  z-index: 5 !important;
-}
-
-
-/* MOBILE */
-@media (max-width: 900px) {
-
-  .hero-mark {
-    min-height: 430px !important;
-  }
-
-  .hero-mark .mark-ring {
-    width: 360px !important;
-    height: 360px !important;
-    min-width: 360px !important;
-    min-height: 360px !important;
-  }
-
-  .hero-mark .trust-card {
-    right: 0 !important;
-    top: auto !important;
-    bottom: 10px !important;
-  }
-}
-
-
-@media (max-width: 600px) {
-
-  .hero-mark {
-    min-height: 360px !important;
-  }
-
-  .hero-mark .mark-ring {
-    width: 290px !important;
-    height: 290px !important;
-    min-width: 290px !important;
-    min-height: 290px !important;
-  }
-
-}
-/* =====================================================
-   OAS HERO LOGO - FINAL FIX
+   OAS HERO LOGO CIRCLE FIX
    ===================================================== */
 
 .hero-mark {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-code: center;
   width: 100%;
   min-height: 500px;
 }
 
-/* Main golden circle */
+/* Main golden circle ring */
 .hero-mark .mark-ring {
   position: relative;
-  width: 430px;
-  height: 430px;
+  width: 410px;
+  height: 410px;
+  min-width: 410px;
+  min-height: 410px;
 
   border-radius: 50%;
   overflow: hidden;
@@ -220,52 +119,49 @@
   justify-content: center;
 
   background: #050608;
-
-  border: 5px solid #d9a52e;
+  border: 6px solid #d9a52e;
 
   box-shadow:
-    0 0 0 2px rgba(244, 201, 93, 0.8),
-    0 0 45px rgba(214, 155, 32, 0.30);
+    0 0 0 3px rgba(244, 201, 93, 0.8),
+    0 0 50px rgba(214, 155, 32, 0.35);
 }
 
-/* Actual OAS logo */
+/* Actual OAS logo inside the circle */
 .hero-mark .hero-main-logo {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: contain;
   object-position: center;
-
   border-radius: 50%;
+  background: #050608;
 }
 
-/* Make sure no old card appears */
-.hero-mark .trust-card {
-  display: none !important;
-}
-
-/* Tablet */
+/* Tablet Responsive */
 @media (max-width: 900px) {
   .hero-mark {
     min-height: 400px;
   }
 
   .hero-mark .mark-ring {
-    width: 360px;
-    height: 360px;
+    width: 350px;
+    height: 350px;
+    min-width: 350px;
+    min-height: 350px;
   }
 }
 
-/* Mobile */
+/* Mobile Responsive */
 @media (max-width: 600px) {
   .hero-mark {
-    min-height: 330px;
+    min-height: 320px;
   }
 
   .hero-mark .mark-ring {
-    width: 290px;
-    height: 290px;
+    width: 280px;
+    height: 280px;
+    min-width: 280px;
+    min-height: 280px;
+    border-width: 4px;
   }
 }
