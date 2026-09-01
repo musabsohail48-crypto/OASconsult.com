@@ -193,52 +193,79 @@
   }
 
 }
-/* ===== OAS HERO LOGO FIX ===== */
+/* =====================================================
+   OAS HERO LOGO - FINAL FIX
+   ===================================================== */
 
+.hero-mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 500px;
+}
+
+/* Main golden circle */
 .hero-mark .mark-ring {
-  position: relative !important;
-  width: 430px !important;
-  height: 430px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
+  position: relative;
+  width: 430px;
+  height: 430px;
 
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  border-radius: 50%;
+  overflow: hidden;
 
-  background-color: #050608 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: 5px solid #d69b20 !important;
+  background: #050608;
+
+  border: 5px solid #d9a52e;
 
   box-shadow:
-    0 0 0 2px #f4c95d,
-    0 0 45px rgba(214, 155, 32, 0.35) !important;
+    0 0 0 2px rgba(244, 201, 93, 0.8),
+    0 0 45px rgba(214, 155, 32, 0.30);
 }
 
-.hero-mark .hero-logo-image {
-  position: absolute !important;
-  inset: 0 !important;
+/* Actual OAS logo */
+.hero-mark .hero-main-logo {
+  display: block;
 
-  width: 100% !important;
-  height: 100% !important;
+  width: 100%;
+  height: 100%;
 
-  background-image: url("assets/oas-logo.jpg") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: contain !important;
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 50%;
 }
 
-/* Mobile */
+/* Make sure no old card appears */
+.hero-mark .trust-card {
+  display: none !important;
+}
+
+/* Tablet */
 @media (max-width: 900px) {
+  .hero-mark {
+    min-height: 400px;
+  }
+
   .hero-mark .mark-ring {
-    width: 360px !important;
-    height: 360px !important;
+    width: 360px;
+    height: 360px;
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
+  .hero-mark {
+    min-height: 330px;
+  }
+
   .hero-mark .mark-ring {
-    width: 290px !important;
-    height: 290px !important;
+    width: 290px;
+    height: 290px;
   }
 }
