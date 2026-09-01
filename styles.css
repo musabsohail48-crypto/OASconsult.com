@@ -244,7 +244,7 @@
   }
 }
 /* =====================================================
-   TRUST CARD HORIZONTAL LAYOUT FIX ABOVE CIRCLE
+   OAS HERO CIRCLE LARGER AND HIGHER FIX
    ===================================================== */
 
 .hero-mark {
@@ -253,17 +253,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 480px;
-  margin-top: -20px;
+  min-height: 500px;
+  margin-top: -80px; /* Circle ko ooper shift karne ke liye */
 }
 
-/* Main golden circle ring */
+/* Main golden circle ring - Size bara kar diya hai */
 .hero-mark .mark-ring {
   position: relative;
-  width: 380px;
-  height: 380px;
-  min-width: 380px;
-  min-height: 380px;
+  width: 450px;
+  height: 450px;
+  min-width: 450px;
+  min-height: 450px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -271,7 +271,7 @@
   justify-content: center;
   background: #050608;
   border: 6px solid #d9a52e;
-  box-shadow: 0 0 0 3px rgba(244, 201, 93, 0.8), 0 0 50px rgba(214, 155, 32, 0.35);
+  box-shadow: 0 0 0 3px rgba(244, 201, 93, 0.8), 0 0 60px rgba(214, 155, 32, 0.4);
 }
 
 /* Actual OAS logo inside the circle */
@@ -285,53 +285,9 @@
   background: #050608;
 }
 
-/* Horizontal Trust Card Layout above/beside the logo area */
+/* Trust card completely hidden */
 .hero-mark .trust-card {
-  position: absolute !important;
-  top: -45px !important;
-  right: 0 !important;
-  width: 380px !important;
-  background: rgba(8, 11, 15, 0.95) !important;
-  border: 1px solid rgba(234, 189, 78, 0.55) !important;
-  border-radius: 14px !important;
-  padding: 8px 12px !important;
-  box-shadow: 0 15px 40px rgba(8,11,15,.3) !important;
-  z-index: 10 !important;
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  gap: 10px !important;
-}
-
-.trust-card div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 4px !important;
-  border-bottom: none !important;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  flex: 1;
-}
-
-.trust-card div:last-child {
-  border-right: none;
-}
-
-.trust-card b {
-  display: none;
-}
-
-.trust-card span {
-  font: 700 10px/1.2 Georgia,serif;
-  color: #fff;
-  margin-top: 2px;
-}
-
-.trust-card small {
-  font: 400 8px Inter,sans-serif;
-  color: #b9bec5;
-  display: block;
+  display: none !important;
 }
 
 /* Tablet & Mobile Responsive */
@@ -341,12 +297,23 @@
     margin-top: 0;
   }
   .hero-mark .mark-ring {
-    width: 320px;
-    height: 320px;
-    min-width: 320px;
-    min-height: 320px;
+    width: 350px;
+    height: 350px;
+    min-width: 350px;
+    min-height: 350px;
   }
-  .hero-mark .trust-card {
-    display: none !important;
+}
+
+@media (max-width: 600px) {
+  .hero-mark {
+    min-height: 300px;
+    margin-top: 0;
+  }
+  .hero-mark .mark-ring {
+    width: 280px;
+    height: 280px;
+    min-width: 280px;
+    min-height: 280px;
+    border-width: 4px;
   }
 }
