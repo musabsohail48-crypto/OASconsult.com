@@ -286,202 +286,119 @@
 </script>
 </section>
 
-<!-- PROFESSIONAL POPUP MODAL (Without WhatsApp redirection) -->
-<div id="serviceModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center;">
-  <div style="background: #ffffff; width: 100%; max-width: 400px; padding: 25px; border-radius: 10px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-    <span id="closeModal" style="position: absolute; right: 18px; top: 12px; font-size: 22px; cursor: pointer; color: #888; font-weight: bold;">&times;</span>
-    <h3 id="modalTitle" style="color: #1a1a1a; font-size: 17px; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #b89735; padding-bottom: 8px;">Service Inquiry</h3>
+<section class="section main-content" style="padding: 40px 0 60px 0; background: #fdfcf7;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px; display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
     
-    <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
-      <div style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">Your Name</label>
-        <input type="text" id="userName" required style="width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; box-sizing: border-box;" placeholder="Enter your full name">
+    <div>
+      <div style="background: #fff; border: 1px solid #e7dfd1; padding: 25px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+        <div style="text-align: center; margin-bottom: 15px;">
+          <span style="color: #b89735; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;">About Us</span>
+          <h3 style="font-size: 20px; color: #1a1a1a; font-weight: 700; margin-top: 5px;">Professional Advice for a Stronger Business</h3>
+        </div>
+        <p style="color: #555; font-size: 13px; line-height: 1.6; margin-bottom: 15px;">
+          OAS Global Corporate Consultants is a Lahore based tax and corporate consultancy firm providing a wide range of professional services to individuals, businesses and organizations.
+        </p>
+        <p style="color: #555; font-size: 13px; line-height: 1.6; margin-bottom: 20px;">
+          Our mission is to deliver reliable, efficient and result-driven solutions with integrity and professionalism.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; background: #fdfcf7; padding: 15px; border: 1px solid #e7dfd1; border-radius: 8px;">
+          <div style="text-align: center;">
+            <h4 style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Muhammad Salma</h4>
+            <p style="font-size: 11px; color: #666; margin-bottom: 5px;">Income Tax Practitioner (ITP)<br>CC Finalist</p>
+            <span style="font-size: 12px; color: #b89735; font-weight: 600;">📞 0306-6596411</span>
+          </div>
+          <div style="text-align: center; border-left: 1px solid #e7dfd1;">
+            <h4 style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 2px;">Muhammad Onaib Qasim</h4>
+            <p style="font-size: 11px; color: #666; margin-bottom: 5px;">CA Finalist</p>
+            <span style="font-size: 12px; color: #b89735; font-weight: 600;">📞 0345-7126123</span>
+          </div>
+        </div>
       </div>
       
-      <div style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">Phone Number</label>
-        <input type="tel" id="userPhone" required style="width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; box-sizing: border-box;" placeholder="03XXXXXXXXX">
+      <div style="background: #fff; border: 1px solid #e7dfd1; padding: 20px; border-radius: 10px; text-align: center;">
+        <h4 style="font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">Why Choose OAS?</h4>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+          <div>
+            <div style="color: #b89735; font-size: 20px; margin-bottom: 5px;">⚖️</div>
+            <h5 style="font-size: 12px; font-weight: 600; color: #1a1a1a; margin: 0;">Experienced Professionals</h5>
+          </div>
+          <div>
+            <div style="color: #b89735; font-size: 20px; margin-bottom: 5px;">🛡️</div>
+            <h5 style="font-size: 12px; font-weight: 600; color: #1a1a1a; margin: 0;">Transparent Process</h5>
+          </div>
+          <div>
+            <div style="color: #b89735; font-size: 20px; margin-bottom: 5px;">📈</div>
+            <h5 style="font-size: 12px; font-weight: 600; color: #1a1a1a; margin: 0;">Result Oriented Solutions</h5>
+          </div>
+          <div>
+            <div style="color: #b89735; font-size: 20px; margin-bottom: 5px;">🤝</div>
+            <h5 style="font-size: 12px; font-weight: 600; color: #1a1a1a; margin: 0;">Long Term Client Support</h5>
+          </div>
+        </div>
       </div>
-      
-      <div style="margin-bottom: 18px;">
-        <label style="display: block; font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">Selected Service</label>
-        <input type="text" id="selectedServiceInput" readonly style="width: 100%; padding: 9px; border: 1px solid #e2d9c5; background: #f9f6f0; border-radius: 5px; font-size: 13px; color: #555; box-sizing: border-box;">
-      </div>
-      
-      <button type="submit" style="width: 100%; background: #b89735; color: #fff; border: none; padding: 11px; border-radius: 5px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.3s;">Submit Inquiry</button>
-    </form>
-    
-    <!-- Success Message Alert (Hidden by default) -->
-    <div id="successMessage" style="display: none; text-align: center; padding: 20px 0;">
-      <div style="color: #28a745; font-size: 40px; margin-bottom: 10px;">✔</div>
-      <h4 style="color: #1a1a1a; font-size: 16px; font-weight: 700; margin-bottom: 5px;">Thank You!</h4>
-      <p style="color: #666; font-size: 13px; margin: 0;">Your inquiry has been submitted successfully. Our team will contact you soon.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  const modal = document.getElementById('serviceModal');
-  const closeModal = document.getElementById('closeModal');
-  const selectedServiceInput = document.getElementById('selectedServiceInput');
-  const modalTitle = document.getElementById('modalTitle');
-  const inquiryForm = document.getElementById('inquiryForm');
-  const successMessage = document.getElementById('successMessage');
-
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', function() {
-      const serviceName = this.getAttribute('data-service');
-      selectedServiceInput.value = serviceName;
-      modalTitle.innerText = `Inquiry for ${serviceName}`;
-      
-      // Reset view to show form and hide success message
-      inquiryForm.style.display = 'block';
-      successMessage.style.display = 'none';
-      
-      modal.style.display = 'flex';
-    });
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    
-    // Hide form and show success message smoothly
-    inquiryForm.style.display = 'none';
-    successMessage.style.display = 'block';
-    
-    // Automatically close modal after 2.5 seconds
-    setTimeout(() => {
-      modal.style.display = 'none';
-      inquiryForm.reset();
-    }, 2500);
-  }
-</script>
-    <section class="section services" id="services" style="padding: 60px 0; background: #fdfcf7;">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
-    
-    <div class="center-heading" style="text-align: center; margin-bottom: 35px;">
-      <div class="kicker" style="color: #b89735; font-weight: 600; font-size: 13px; letter-spacing: 1.5px; margin-bottom: 6px; text-transform: uppercase;">OUR SERVICES</div>
-      <h2 style="font-size: 30px; color: #1a1a1a; font-weight: 700; margin-bottom: 5px;">Complete Corporate &amp; <span style="color: #b89735;">Tax Solutions</span></h2>
-      <p style="color: #666; font-size: 13px; margin: 0;">All Your Compliance Needs Under One Roof</p>
     </div>
 
-    <div class="service-grid" id="serviceGrid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
-      
-      <div class="service-card" data-service="NTN Registration" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">NTN Registration</h3>
+    <div>
+      <div style="background: #fff; border: 1px solid #e7dfd1; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3 style="font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; border-bottom: 2px solid #b89735; padding-bottom: 5px;">📖 Guidelines</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; color: #555;">
+          <li style="margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed #eee;">✔️ File your tax returns on time to avoid penalties.</li>
+          <li style="margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed #eee;">✔️ Keep your financial records accurate and updated.</li>
+          <li style="margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed #eee;">✔️ Ensure timely compliance with all statutory requirements.</li>
+          <li style="margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px dashed #eee;">✔️ Respond promptly to notices from tax authorities.</li>
+          <li style="margin-bottom: 0;">✔️ Consult professionals for reliable and accurate advice.</li>
+        </ul>
       </div>
 
-      <div class="service-card" data-service="Income Tax Return Filling" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Income Tax Return Filling</h3>
+      <div style="background: #fff; border: 1px solid #e7dfd1; padding: 20px; border-radius: 10px;">
+        <h3 style="font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; border-bottom: 2px solid #b89735; padding-bottom: 5px;">❓ Frequently Asked Questions</h3>
+        <div style="font-size: 12px; color: #555;">
+          <div style="padding: 6px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span>What is NTN and why is it important?</span> <b>+</b></div>
+          <div style="padding: 6px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span>Who is required to file Income Tax Return?</span> <b>+</b></div>
+          <div style="padding: 6px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span>What is Sales Tax Registration?</span> <b>+</b></div>
+          <div style="padding: 6px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span>What happens if I receive a tax notice?</span> <b>+</b></div>
+          <div style="padding: 6px 0; display: flex; justify-content: space-between;"><span>What documents are required for company?</span> <b>+</b></div>
+        </div>
       </div>
-
-      <div class="service-card" data-service="Sales Tax Registration" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Sales Tax Registration</h3>
-      </div>
-
-      <div class="service-card" data-service="Sales Tax Return Filling" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path><line x1="8" y1="8" x2="16" y2="8"></line><line x1="8" y1="12" x2="16" y2="12"></line><line x1="8" y1="16" x2="12" y2="16"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Sales Tax Return Filling</h3>
-      </div>
-
-      <div class="service-card" data-service="Company Registration" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="10" y2="9"></line><line x1="9" y1="13" x2="10" y2="13"></line><line x1="9" y1="17" x2="10" y2="17"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Company Registration</h3>
-      </div>
-
-      <div class="service-card" data-service="SECP Compliance" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">SECP Compliance</h3>
-      </div>
-
-      <div class="service-card" data-service="Lahore Chamber of Commerce Registration" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Lahore Chamber of Commerce Registration</h3>
-      </div>
-
-      <div class="service-card" data-service="Tax Notices Compliance" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Tax Notices Compliance</h3>
-      </div>
-
-      <div class="service-card" data-service="Accounting & Bookkeeping Services" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Accounting & Bookkeeping Services</h3>
-      </div>
-
-      <div class="service-card" data-service="Financial Statements Preparation" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Financial Statements Preparation</h3>
-      </div>
-
-      <div class="service-card" data-service="Weekly & Monthly Stock Count Services" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Weekly & Monthly Stock Count Services</h3>
-      </div>
-
-      <div class="service-card" data-service="Internal Audit Services" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">Internal Audit Services</h3>
-      </div>
-
-      <div class="service-card" data-service="PSEB Registration" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">PSEB Registration</h3>
-      </div>
-
-      <div class="service-card" data-service="AOP Registration" style="background: #ffffff; border: 1px solid #e7dfd1; padding: 22px 10px; border-radius: 10px; text-align: center; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.3s; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 130px;">
-        <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#b89735" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-        <h3 style="color: #1a1a1a; font-size: 13px; font-weight: 600; margin: 0; line-height: 1.3;">AOP Registration</h3>
-      </div>
-
     </div>
+
   </div>
 </section>
 
-<div id="serviceModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center;">
-  <div style="background: #ffffff; width: 100%; max-width: 400px; padding: 25px; border-radius: 10px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-    <span id="closeModal" style="position: absolute; right: 18px; top: 12px; font-size: 22px; cursor: pointer; color: #888; font-weight: bold;">&times;</span>
-    <h3 id="modalTitle" style="color: #1a1a1a; font-size: 17px; font-weight: 700; margin-bottom: 15px; border-bottom: 2px solid #b89735; padding-bottom: 8px;">Service Inquiry</h3>
+<footer style="background: #111; color: #fff; padding: 40px 0 20px 0; border-top: 3px solid #b89735;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; font-size: 12px;">
     
-    <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
-      <div style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">Your Name</label>
-        <input type="text" id="userName" required style="width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; box-sizing: border-box;" placeholder="Enter your full name">
-      </div>
-      
-      <div style="margin-bottom: 12px;">
-        <label style="display: block; font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">Phone Number</label>
-        <input type="tel" id="userPhone" required style="width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; box-sizing: border-box;" placeholder="03XXXXXXXXX">
-      </div>
-      
-      <div style="margin-bottom: 18px;">
-        <label style="display: block; font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">Selected Service</label>
-        <input type="text" id="selectedServiceInput" readonly style="width: 100%; padding: 9px; border: 1px solid #e2d9c5; background: #f9f6f0; border-radius: 5px; font-size: 13px; color: #555; box-sizing: border-box;">
-      </div>
-      
-      <button type="submit" style="width: 100%; background: #b89735; color: #fff; border: none; padding: 11px; border-radius: 5px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.3s;">Submit Inquiry</button>
-    </form>
-    
-    <div id="successMessage" style="display: none; text-align: center; padding: 20px 0;">
-      <div style="color: #28a745; font-size: 40px; margin-bottom: 10px;">✔</div>
-      <h4 style="color: #1a1a1a; font-size: 16px; font-weight: 700; margin-bottom: 5px;">Thank You!</h4>
-      <p style="color: #666; font-size: 13px; margin: 0;">Your inquiry has been submitted successfully. Our team will contact you soon.</p>
+    <div>
+      <h4 style="color: #b89735; font-size: 14px; font-weight: 700; margin-bottom: 10px;">OAS GLOBAL CONSULTANTS</h4>
+      <p style="color: #aaa; line-height: 1.5; margin: 0;">Compliance Today, Growth Tomorrow. Professional corporate & tax solutions under one roof.</p>
     </div>
+    
+    <div>
+      <h4 style="color: #b89735; font-size: 14px; font-weight: 700; margin-bottom: 10px;">OUR ADDRESS</h4>
+      <p style="color: #aaa; line-height: 1.5; margin: 0;">Main Market, Gulberg, Lahore.</p>
+    </div>
+    
+    <div>
+      <h4 style="color: #b89735; font-size: 14px; font-weight: 700; margin-bottom: 10px;">CONTACT US</h4>
+      <p style="color: #aaa; margin: 0 0 5px 0;">📞 0306-6596411 | 0345-7126123</p>
+      <p style="color: #aaa; margin: 0 0 5px 0;">✉️ info@oasconsult.com</p>
+      <p style="color: #aaa; margin: 0;">🌐 www.oasconsult.com</p>
+    </div>
+    
+    <div>
+      <h4 style="color: #b89735; font-size: 14px; font-weight: 700; margin-bottom: 10px;">QUICK LINKS</h4>
+      <p style="color: #aaa; margin: 0 0 4px 0;"><a href="#home" style="color: #aaa; text-decoration: none;">Home</a></p>
+      <p style="color: #aaa; margin: 0 0 4px 0;"><a href="#services" style="color: #aaa; text-decoration: none;">Services</a></p>
+      <p style="color: #aaa; margin: 0 0 4px 0;"><a href="#guidelines" style="color: #aaa; text-decoration: none;">Guidelines</a></p>
+      <p style="color: #aaa; margin: 0;"><a href="#contact" style="color: #aaa; text-decoration: none;">Contact Us</a></p>
+    </div>
+    
   </div>
-</div>
+  <div style="text-align: center; border-top: 1px solid #222; margin-top: 30px; padding-top: 15px; color: #777; font-size: 11px;">
+    &copy; 2026 OAS Global Corporate Consultants. All Rights Reserved.
+  </div>
+</footer>
 
 <script>
   const modal = document.getElementById('serviceModal');
