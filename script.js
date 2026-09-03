@@ -2825,3 +2825,25 @@ ol {
 
     box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.35);
+   /* =========================================================
+   FAQ LOGIN + SECURE QUESTION PORTAL
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openLoginBtn = document.getElementById("openLoginBtn");
+    const loginModal = document.getElementById("loginModal");
+    const questionModal = document.getElementById("questionModal");
+
+    if (openLoginBtn) {
+        openLoginBtn.addEventListener("click", function () {
+
+            if (loginModal) {
+                loginModal.classList.add("show");
+                document.body.classList.add("modal-open");
+            }
+
+        });
+    }
+
+});
