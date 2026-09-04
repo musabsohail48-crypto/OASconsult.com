@@ -3048,3 +3048,159 @@ ol {
         bottom: 22px;
     }
 }
+   /* =====================================================
+   FINAL HEADER LOGO FIX
+   ===================================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.brand-text strong {
+    color: #d6a84f;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand-text span {
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+}
+
+
+/* =====================================================
+   REMOVE HERO RIGHT CARD
+   ===================================================== */
+
+.hero-side-card {
+    display: none !important;
+}
+
+
+/* =====================================================
+   FINAL HERO SLIDER
+   ===================================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.9s ease,
+        visibility 0.9s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.hero-slide .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.90),
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.30)
+        );
+}
+
+
+/* Dots */
+
+.hero-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.hero-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.45);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-dot.active {
+    width: 28px;
+    border-radius: 20px;
+    background: #d6a84f;
+}
+
+
+/* Arrows */
+
+.hero-arrow {
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Mobile logo */
+
+@media (max-width: 600px) {
+
+    .brand-logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .brand-text strong {
+        font-size: 21px;
+    }
+
+    .brand-text span {
+        font-size: 7px;
+    }
+
+}
