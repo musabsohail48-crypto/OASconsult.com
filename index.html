@@ -170,13 +170,7 @@
                 href="#contact"
                 class="nav-link"
             >
-                Contact Us
-            </a>
-
-            <a
-                href="#appointment"
-                class="nav-cta"
-            >
+                
                 Book Consultation
             </a>
 
@@ -300,11 +294,7 @@
         </div>
 
 
-        <div class="hero-side-card">
-
-           
-
-    </div>
+        
 
 
     <!-- SLIDER CONTROLS -->
@@ -1974,6 +1964,129 @@
 ========================================================= -->
 
 <script src="./script.js"></script>
+                <script>
+(function () {
+
+    function startHeroSlider() {
+
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+
+        if (slides.length === 0) {
+            console.log('Hero slides not found');
+            return;
+        }
+
+        let current = 0;
+        let timer = null;
+
+        function showSlide(index) {
+
+            current = (index + slides.length) % slides.length;
+
+            slides.forEach(function (slide, i) {
+                slide.classList.remove('active');
+
+                if (i === current) {
+                    slide.classList.add('active');
+                }
+            });
+
+            dots.forEach(function (dot, i) {
+                dot.classList.remove('active');
+
+                if (i === current) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        function startTimer() {
+
+            if (timer) {
+                clearInterval(timer);
+            }
+
+            timer = setInterval(function () {
+                showSlide(current + 1);
+            }, 3000);
+        }
+
+        /* DOT CLICK */
+
+        dots.forEach(function (dot, index) {
+
+            dot.onclick = function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                showSlide(index);
+                startTimer();
+
+            };
+
+        });
+
+
+        /* NEXT BUTTON */
+
+        const nextButton =
+            document.querySelector('.hero-arrow.next');
+
+        if (nextButton) {
+
+            nextButton.onclick = function (event) {
+
+                event.preventDefault();
+
+                showSlide(current + 1);
+                startTimer();
+
+            };
+
+        }
+
+
+        /* PREVIOUS BUTTON */
+
+        const prevButton =
+            document.querySelector('.hero-arrow.prev');
+
+        if (prevButton) {
+
+            prevButton.onclick = function (event) {
+
+                event.preventDefault();
+
+                showSlide(current - 1);
+                startTimer();
+
+            };
+
+        }
+
+
+        /* FIRST SLIDE */
+
+        showSlide(0);
+
+        /* AUTO SLIDER */
+
+        startTimer();
+
+        console.log(
+            'Hero slider started:',
+            slides.length,
+            'slides'
+        );
+    }
+
+
+    startHeroSlider();
+
+})();
+</script>
 
 </body>
 </html>
