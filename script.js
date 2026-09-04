@@ -274,209 +274,143 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       SERVICE DATA
-       ===================================================== */
+   // ================= SERVICE DETAIL PAGE =================
 
-    const serviceData = {
+const serviceDetails = {
+  "ntn-registration": {
+    title: "NTN Registration",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1400&q=85",
+    overview: "NTN Registration is the essential first step for individuals and businesses entering Pakistan's formal tax system.",
+    points: ["Taxpayer registration guidance", "Documentation review", "Application preparation", "Registration status assistance"],
+    process: ["Initial information collection", "Document verification", "Application preparation", "Submission and follow-up"]
+  },
 
-        "ntn-registration": {
-            category: "TAX REGISTRATION",
-            title: "NTN Registration",
-            description:
-                "Professional assistance for obtaining and organizing National Tax Number registration requirements.",
-            steps: [
-                "Review applicant and business information.",
-                "Prepare the required registration details.",
-                "Submit the registration information.",
-                "Review and organize the resulting tax registration record."
-            ],
-            note:
-                "Requirements may vary depending on the taxpayer's individual or business status."
-        },
+  "income-tax-return": {
+    title: "Income Tax Return Filing",
+    image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1400&q=85",
+    overview: "Professional assistance for preparing and filing income tax returns accurately and on time.",
+    points: ["Income and expense review", "Tax calculation assistance", "Return preparation", "Filing support"],
+    process: ["Collect financial information", "Review documents", "Prepare return", "Final review and filing"]
+  },
 
+  "sales-tax-registration": {
+    title: "Sales Tax Registration",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=85",
+    overview: "Complete guidance for businesses requiring sales tax registration and related compliance.",
+    points: ["Eligibility assessment", "Documentation", "Registration application", "Compliance guidance"],
+    process: ["Business assessment", "Document collection", "Application preparation", "Registration follow-up"]
+  },
 
-        "income-tax-return": {
-            category: "INCOME TAX",
-            title: "Income Tax Return Filing",
-            description:
-                "Professional support for preparing, reviewing and filing income tax returns accurately and on time.",
-            steps: [
-                "Collect income and supporting financial information.",
-                "Review relevant deductions and tax information.",
-                "Prepare the return for review.",
-                "Complete the filing process and maintain the record."
-            ],
-            note:
-                "Final tax treatment depends on the taxpayer's actual financial circumstances."
-        },
+  "sales-tax-return": {
+    title: "Sales Tax Return Filing",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1400&q=85",
+    overview: "Professional sales tax return preparation and filing support for businesses.",
+    points: ["Sales and purchase review", "Tax reconciliation", "Return preparation", "Filing assistance"],
+    process: ["Collect records", "Verify transactions", "Prepare return", "Final review and submission"]
+  },
 
+  "company-registration": {
+    title: "Company Registration",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85",
+    overview: "Professional assistance with company formation and registration documentation.",
+    points: ["Company structure guidance", "Documentation", "Registration support", "Post-registration guidance"],
+    process: ["Business consultation", "Name and structure review", "Documentation", "Registration follow-up"]
+  },
 
-        "sales-tax-registration": {
-            category: "SALES TAX",
-            title: "Sales Tax Registration",
-            description:
-                "Assistance with sales tax registration requirements and preparation of relevant business information.",
-            steps: [
-                "Review business activity and registration requirements.",
-                "Collect required business documentation.",
-                "Prepare registration information.",
-                "Complete the applicable registration process."
-            ],
-            note:
-                "Eligibility and documentation requirements depend on the nature of the business."
-        },
+  "secp-compliance": {
+    title: "SECP Compliance",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85",
+    overview: "Support for maintaining corporate records and meeting applicable SECP compliance requirements.",
+    points: ["Compliance review", "Corporate documentation", "Filing support", "Record management"],
+    process: ["Requirement assessment", "Document review", "Compliance preparation", "Filing and follow-up"]
+  },
 
+  "lahore-chamber": {
+    title: "Lahore Chamber of Commerce Registration",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
+    overview: "Guidance for businesses seeking Lahore Chamber of Commerce registration and membership support.",
+    points: ["Eligibility guidance", "Documentation review", "Application preparation", "Registration assistance"],
+    process: ["Business assessment", "Document verification", "Application preparation", "Submission support"]
+  },
 
-        "sales-tax-return": {
-            category: "SALES TAX",
-            title: "Sales Tax Return Filing",
-            description:
-                "Professional assistance with preparation and filing of sales tax returns.",
-            steps: [
-                "Collect sales and purchase records.",
-                "Review applicable tax information.",
-                "Prepare the sales tax return.",
-                "Complete filing and maintain supporting records."
-            ],
-            note:
-                "Accurate transaction records are important for proper return preparation."
-        },
+  "tax-notices": {
+    title: "Tax Notices Compliance",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1400&q=85",
+    overview: "Professional assistance in understanding and responding to tax notices and compliance matters.",
+    points: ["Notice review", "Issue identification", "Response preparation", "Compliance guidance"],
+    process: ["Notice assessment", "Information collection", "Response preparation", "Submission and follow-up"]
+  },
 
+  "accounting-bookkeeping": {
+    title: "Accounting & Bookkeeping Services",
+    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1400&q=85",
+    overview: "Organized accounting and bookkeeping support designed to help businesses maintain accurate financial records.",
+    points: ["Transaction recording", "Ledger management", "Reconciliation", "Financial record organization"],
+    process: ["Record collection", "Classification", "Reconciliation", "Regular reporting"]
+  },
 
-        "company-registration": {
-            category: "CORPORATE SERVICES",
-            title: "Company Registration",
-            description:
-                "Support for businesses seeking a structured company registration process.",
-            steps: [
-                "Review proposed business structure.",
-                "Prepare required incorporation information.",
-                "Organize relevant documents.",
-                "Complete the applicable registration process."
-            ],
-            note:
-                "Registration requirements vary according to company structure and circumstances."
-        },
+  "financial-statements": {
+    title: "Financial Statements Preparation",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=85",
+    overview: "Preparation and organization of professional financial statements based on available business records.",
+    points: ["Financial data review", "Statement preparation", "Account reconciliation", "Management reporting"],
+    process: ["Collect records", "Verify balances", "Prepare statements", "Final review"]
+  },
 
+  "stock-count": {
+    title: "Weekly & Monthly Stock Count Services",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1400&q=85",
+    overview: "Structured stock counting services to help businesses maintain reliable inventory records.",
+    points: ["Physical stock counting", "Inventory reconciliation", "Variance identification", "Periodic reporting"],
+    process: ["Inventory planning", "Physical count", "Record comparison", "Variance report"]
+  },
 
-        "secp-compliance": {
-            category: "CORPORATE COMPLIANCE",
-            title: "SECP Compliance",
-            description:
-                "Professional support for corporate compliance and documentation requirements.",
-            steps: [
-                "Review current corporate records.",
-                "Identify applicable compliance requirements.",
-                "Prepare required information and documents.",
-                "Maintain compliance records and filing history."
-            ],
-            note:
-                "Specific compliance requirements depend on the company's legal structure."
-        },
+  "internal-audit": {
+    title: "Internal Audit Services",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=85",
+    overview: "Independent internal review focused on processes, controls, records and operational efficiency.",
+    points: ["Control review", "Process assessment", "Risk identification", "Audit reporting"],
+    process: ["Scope definition", "Record review", "Testing and assessment", "Audit report"]
+  },
 
+  "pseb-registration": {
+    title: "PSEB Registration",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=85",
+    overview: "Guidance for businesses and IT-related entities seeking PSEB registration and related support.",
+    points: ["Eligibility guidance", "Documentation", "Registration assistance", "Follow-up support"],
+    process: ["Initial assessment", "Document preparation", "Application support", "Follow-up"]
+  },
 
-        "lahore-chamber": {
-            category: "BUSINESS REGISTRATION",
-            title: "Lahore Chamber of Commerce Registration",
-            description:
-                "Assistance for businesses preparing membership and registration documentation.",
-            steps: [
-                "Review business information.",
-                "Prepare required membership documentation.",
-                "Organize supporting records.",
-                "Assist with the applicable registration process."
-            ],
-            note:
-                "Membership requirements may depend on the applicant's business status."
-        },
-
-
-        "tax-notices": {
-            category: "TAX COMPLIANCE",
-            title: "Tax Notices Compliance",
-            description:
-                "Professional assistance in reviewing and responding to tax notices and compliance matters.",
-            steps: [
-                "Review the notice and relevant deadline.",
-                "Identify the information requested.",
-                "Collect supporting documentation.",
-                "Prepare the appropriate response and compliance record."
-            ],
-            note:
-                "Tax notices should be reviewed promptly because deadlines may apply."
-        },
+  "aop-registration": {
+    title: "AOP Registration",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
+    overview: "Professional assistance for registration and documentation of Associations of Persons.",
+    points: ["AOP structure guidance", "Partner information", "Documentation", "Registration support"],
+    process: ["Information collection", "Document verification", "Application preparation", "Registration follow-up"]
+  }
+};
 
 
-        "accounting-bookkeeping": {
-            category: "ACCOUNTING",
-            title: "Accounting & Bookkeeping Services",
-            description:
-                "Structured accounting and bookkeeping support for maintaining organized financial records.",
-            steps: [
-                "Review existing financial records.",
-                "Organize transactions and supporting documents.",
-                "Maintain accounting records.",
-                "Provide periodic financial information for management use."
-            ],
-            note:
-                "The exact accounting workflow depends on the size and nature of the business."
-        },
+// View Service buttons
+document.querySelectorAll(".service-open").forEach(button => {
+  button.addEventListener("click", function () {
 
+    const card = this.closest(".service-card");
+    const serviceKey = card?.dataset.service;
+    const service = serviceDetails[serviceKey];
 
-        "financial-statements": {
-            category: "FINANCIAL REPORTING",
-            title: "Financial Statements Preparation",
-            description:
-                "Professional preparation and organization of financial statements for business reporting requirements.",
-            steps: [
-                "Collect accounting records.",
-                "Review financial transactions.",
-                "Prepare relevant financial statements.",
-                "Perform review and finalize reporting information."
-            ],
-            note:
-                "Financial reporting requirements depend on the applicable business and reporting framework."
-        },
+    if (!service) {
+      alert("Service details are currently unavailable.");
+      return;
+    }
 
+    sessionStorage.setItem("selectedService", JSON.stringify(service));
 
-        "stock-count": {
-            category: "INVENTORY SERVICES",
-            title: "Weekly & Monthly Stock Count Services",
-            description:
-                "Structured stock counting support to help businesses maintain accurate inventory records.",
-            steps: [
-                "Plan the stock-count activity.",
-                "Count and record inventory.",
-                "Compare physical quantities with available records.",
-                "Report discrepancies for management review."
-            ],
-            note:
-                "Regular stock counts can help businesses identify inventory differences promptly."
-        },
-
-
-        "internal-audit": {
-            category: "AUDIT & ASSURANCE",
-            title: "Internal Audit Services",
-            description:
-                "Professional internal audit support focused on controls, processes and financial operations.",
-            steps: [
-                "Understand the relevant business process.",
-                "Review internal controls.",
-                "Identify potential control gaps.",
-                "Prepare observations and recommendations."
-            ],
-            note:
-                "The scope of an internal audit is determined according to the engagement requirements."
-        },
-
-
-        "pseb-registration": {
-            category: "BUSINESS REGISTRATION",
-            title: "PSEB Registration",
-            description:
-                "
+    window.location.href =
+      "service-details.html?service=" +
+      encodeURIComponent(serviceKey);
+  });
+});
                /* =====================================================
    HERO SLIDER - INDEPENDENT FINAL FIX
    Automatically changes every 3 seconds
