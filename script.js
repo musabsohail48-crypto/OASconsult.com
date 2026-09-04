@@ -477,3 +477,173 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "PSEB Registration",
             description:
                 "
+               /* =====================================================
+   HERO SLIDER - INDEPENDENT FINAL FIX
+   Automatically changes every 3 seconds
+   ===================================================== */
+
+(function () {
+
+    function initializeHeroSlider() {
+
+        const slides =
+            document.querySelectorAll(".hero-slide");
+
+        const dots =
+            document.querySelectorAll(".hero-dot");
+
+        const next =
+            document.querySelector(".hero-arrow.next");
+
+        const prev =
+            document.querySelector(".hero-arrow.prev");
+
+        if (!slides.length) {
+            return;
+        }
+
+        let current = 0;
+        let timer;
+
+
+        function showSlide(index) {
+
+            current =
+                (index + slides.length) %
+                slides.length;
+
+
+            slides.forEach((slide, i) => {
+
+                slide.classList.toggle(
+                    "active",
+                    i === current
+                );
+
+            });
+
+
+            dots.forEach((dot, i) => {
+
+                dot.classList.toggle(
+                    "active",
+                    i === current
+                );
+
+            });
+
+        }
+
+
+        function nextSlide() {
+
+            showSlide(current + 1);
+
+        }
+
+
+        function previousSlide() {
+
+            showSlide(current - 1);
+
+        }
+
+
+        function startAutoSlide() {
+
+            clearInterval(timer);
+
+            timer = setInterval(
+                nextSlide,
+                3000
+            );
+
+        }
+
+
+        /* Dots */
+
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    showSlide(index);
+
+                    startAutoSlide();
+
+                }
+            );
+
+        });
+
+
+        /* Next */
+
+        if (next) {
+
+            next.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    nextSlide();
+
+                    startAutoSlide();
+
+                }
+            );
+
+        }
+
+
+        /* Previous */
+
+        if (prev) {
+
+            prev.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    previousSlide();
+
+                    startAutoSlide();
+
+                }
+            );
+
+        }
+
+
+        /* Start */
+
+        showSlide(0);
+
+        startAutoSlide();
+
+    }
+
+
+    if (
+        document.readyState === "loading"
+    ) {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initializeHeroSlider
+        );
+
+    } else {
+
+        initializeHeroSlider();
+
+    }
+
+})();
