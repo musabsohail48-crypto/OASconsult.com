@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Details | OAS Global Corporate Consultants</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="brand">
+      <img src="./assets/oas-logo.jpg" class="brand-logo" alt="OAS">
+      <div class="brand-text">
+        <strong>OAS</strong>
+        <span>GLOBAL CORPORATE CONSULTANTS</span>
+      </div>
+    </a>
+
+    <a href="index.html" class="nav-cta">Back to Home</a>
+  </div>
+</header>
+
+<main id="servicePage">
+
+  <section class="service-detail-hero">
+    <img id="serviceImage" alt="">
+    <div class="service-detail-overlay">
+      <span>PROFESSIONAL SERVICE</span>
+      <h1 id="serviceTitle"></h1>
+    </div>
+  </section>
+
+  <section class="service-detail-content">
+
+    <div class="service-info">
+      <h2>Service Overview</h2>
+      <p id="serviceOverview"></p>
+
+      <h2>What We Provide</h2>
+      <ul id="servicePoints"></ul>
+
+      <h2>Professional Process</h2>
+      <ol id="serviceProcess"></ol>
+    </div>
+
+    <div class="service-request-box">
+      <h2>Request This Service</h2>
+      <p>Apni details submit karein. Hamari team aapki request review karke aapse contact karegi.</p>
+
+      <form id="serviceRequestForm">
+
+        <input type="hidden" id="selectedService" name="service">
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+
+        <label>Subject / Issue</label>
+        <textarea name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn btn-primary">
+          Submit Service Request
+        </button>
+
+      </form>
+
+      <div id="serviceSuccess" style="display:none;">
+        ✓ Your service request has been submitted successfully.
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+
+<script>
+const data = JSON.parse(sessionStorage.getItem("selectedService"));
+
+if (!data) {
+  window.location.href = "index.html#services";
+} else {
+
+  document.getElementById("serviceTitle").textContent = data.title;
+  document.getElementById("serviceImage").src = data.image;
+  document.getElementById("serviceImage").alt = data.title;
+  document.getElementById("serviceOverview").textContent = data.overview;
+  document.getElementById("selectedService").value = data.title;
+
+  document.getElementById("servicePoints").innerHTML =
+    data.points.map(x => `<li>${x}</li>`).join("");
+
+  document.getElementById("serviceProcess").innerHTML =
+    data.process.map(x => `<li>${x}</li>`).join("");
+}
+
+
+// Submit
+document.getElementById("serviceRequestForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const payload = Object.fromEntries(formData.entries());
+
+  try {
+
+    const response = await fetch("/api/service-requests", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) throw new Error();
+
+    this.style.display = "none";
+    document.getElementById("serviceSuccess").style.display = "block";
+
+  } catch (error) {
+
+    alert("Request submit nahi ho saki. Please try again.");
+  }
+});
+</script>
+
+</body>
+</html>
