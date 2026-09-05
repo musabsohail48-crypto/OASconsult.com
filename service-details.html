@@ -84,52 +84,18 @@
 <script src="script.js"></script>
 
 <script>
-const data = JSON.parse(sessionStorage.getItem("selectedService"));
+<script>
+document.querySelectorAll(".service-open").forEach(function(button) {
+    button.addEventListener("click", function() {
 
-if (!data) {
-  window.location.href = "index.html#services";
-} else {
+        const card = this.closest(".service-card");
+        const service = card.getAttribute("data-service");
 
-  document.getElementById("serviceTitle").textContent = data.title;
-  document.getElementById("serviceImage").src = data.image;
-  document.getElementById("serviceImage").alt = data.title;
-  document.getElementById("serviceOverview").textContent = data.overview;
-  document.getElementById("selectedService").value = data.title;
+        if (service) {
+            window.location.href = "./service-details.html?service=" + service;
+        }
 
-  document.getElementById("servicePoints").innerHTML =
-    data.points.map(x => `<li>${x}</li>`).join("");
-
-  document.getElementById("serviceProcess").innerHTML =
-    data.process.map(x => `<li>${x}</li>`).join("");
-}
-
-
-// Submit
-document.getElementById("serviceRequestForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-  const payload = Object.fromEntries(formData.entries());
-
-  try {
-
-    const response = await fetch("/api/service-requests", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
     });
-
-    if (!response.ok) throw new Error();
-
-    this.style.display = "none";
-    document.getElementById("serviceSuccess").style.display = "block";
-
-  } catch (error) {
-
-    alert("Request submit nahi ho saki. Please try again.");
-  }
 });
 </script>
 
