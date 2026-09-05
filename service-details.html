@@ -3,100 +3,844 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Service Details | OAS Global Corporate Consultants</title>
-<link rel="stylesheet" href="styles.css">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --gold-light:#f1d477;
+  --black:#070707;
+  --dark:#111111;
+  --dark2:#181818;
+  --white:#ffffff;
+  --muted:#b9b9b9;
+  --border:rgba(212,175,55,.25);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#080808;
+  color:#fff;
+  line-height:1.7;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+.service-header{
+  height:78px;
+  background:#050505;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+.brand strong{
+  display:block;
+  color:var(--gold);
+  font-size:23px;
+  letter-spacing:2px;
+}
+
+.brand span{
+  display:block;
+  font-size:9px;
+  letter-spacing:1.5px;
+  color:#aaa;
+}
+
+.back-btn{
+  background:var(--gold);
+  color:#080808;
+  padding:11px 22px;
+  border-radius:5px;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* HERO IMAGE */
+.detail-hero{
+  width:100%;
+  height:480px;
+  position:relative;
+  overflow:hidden;
+}
+
+.detail-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.detail-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.15),rgba(0,0,0,.92)),
+    linear-gradient(90deg,rgba(0,0,0,.8),transparent);
+}
+
+.hero-content{
+  position:absolute;
+  z-index:2;
+  left:7%;
+  bottom:65px;
+  max-width:850px;
+}
+
+.hero-label{
+  color:var(--gold-light);
+  font-size:12px;
+  letter-spacing:3px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.hero-content h1{
+  font-size:52px;
+  line-height:1.12;
+  margin-bottom:18px;
+}
+
+.hero-content p{
+  color:#ddd;
+  max-width:700px;
+  font-size:17px;
+}
+
+/* MAIN */
+.main{
+  max-width:1180px;
+  margin:auto;
+  padding:75px 25px;
+}
+
+.section-title{
+  font-size:28px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+.section-title::after{
+  content:"";
+  display:block;
+  width:55px;
+  height:3px;
+  background:var(--gold);
+  margin-top:10px;
+}
+
+.overview{
+  color:#c8c8c8;
+  font-size:16px;
+  max-width:900px;
+  margin-bottom:55px;
+}
+
+/* TWO COLUMNS */
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-bottom:70px;
+}
+
+.info-card{
+  background:linear-gradient(145deg,#151515,#0c0c0c);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:32px;
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.info-card h2{
+  color:var(--gold);
+  font-size:22px;
+  margin-bottom:22px;
+}
+
+.info-card ul,
+.info-card ol{
+  padding-left:22px;
+  color:#ccc;
+}
+
+.info-card li{
+  margin-bottom:13px;
+}
+
+.info-card li::marker{
+  color:var(--gold);
+}
+
+/* FORM SECTION */
+.form-section{
+  background:
+    linear-gradient(145deg,#151515,#090909);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:45px;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.form-heading{
+  margin-bottom:30px;
+}
+
+.form-heading h2{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.form-heading p{
+  color:#aaa;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-group label{
+  font-size:13px;
+  font-weight:600;
+  color:#ddd;
+  margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  background:#080808;
+  border:1px solid #383838;
+  color:#fff;
+  padding:14px 15px;
+  border-radius:6px;
+  outline:none;
+  font-size:14px;
+  transition:.25s;
+}
+
+.form-group textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 2px rgba(212,175,55,.08);
+}
+
+.submit-area{
+  margin-top:28px;
+}
+
+.submit-btn{
+  border:0;
+  background:linear-gradient(135deg,#d4af37,#f0cf68);
+  color:#080808;
+  padding:15px 30px;
+  border-radius:6px;
+  font-weight:800;
+  cursor:pointer;
+  font-size:14px;
+  letter-spacing:.5px;
+}
+
+.submit-btn:hover{
+  transform:translateY(-1px);
+}
+
+.success{
+  display:none;
+  margin-top:20px;
+  padding:15px;
+  border:1px solid #3d7d51;
+  background:#102015;
+  color:#9de0ad;
+  border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px 20px;
+  border-top:1px solid var(--border);
+  color:#888;
+  font-size:13px;
+}
+
+footer strong{
+  color:var(--gold);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .service-header{
+    padding:0 20px;
+  }
+
+  .brand span{
+    display:none;
+  }
+
+  .back-btn{
+    padding:9px 14px;
+    font-size:11px;
+  }
+
+  .detail-hero{
+    height:390px;
+  }
+
+  .hero-content{
+    left:25px;
+    right:25px;
+    bottom:40px;
+  }
+
+  .hero-content h1{
+    font-size:34px;
+  }
+
+  .hero-content p{
+    font-size:14px;
+  }
+
+  .info-grid,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-group.full{
+    grid-column:auto;
+  }
+
+  .form-section{
+    padding:25px 20px;
+  }
+
+  .main{
+    padding:50px 18px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="nav-container">
-    <a href="index.html" class="brand">
-      <img src="./assets/oas-logo.jpg" class="brand-logo" alt="OAS">
-      <div class="brand-text">
-        <strong>OAS</strong>
-        <span>GLOBAL CORPORATE CONSULTANTS</span>
-      </div>
-    </a>
+<header class="service-header">
 
-    <a href="index.html" class="nav-cta">Back to Home</a>
-  </div>
+  <a href="index.html" class="brand">
+    <img src="./assets/oas-logo.jpg" alt="OAS Logo">
+
+    <div>
+      <strong>OAS</strong>
+      <span>GLOBAL CORPORATE CONSULTANTS</span>
+    </div>
+  </a>
+
+  <a href="index.html#services" class="back-btn">
+    ← BACK TO SERVICES
+  </a>
+
 </header>
 
-<main id="servicePage">
 
-  <section class="service-detail-hero">
-    <img id="serviceImage" alt="">
-    <div class="service-detail-overlay">
-      <span>PROFESSIONAL SERVICE</span>
-      <h1 id="serviceTitle"></h1>
-    </div>
-  </section>
+<section class="detail-hero">
 
-  <section class="service-detail-content">
+  <img id="serviceImage" src="" alt="Service">
 
-    <div class="service-info">
-      <h2>Service Overview</h2>
-      <p id="serviceOverview"></p>
+  <div class="hero-content">
+    <div class="hero-label">OAS PROFESSIONAL SERVICES</div>
 
+    <h1 id="serviceTitle">Service</h1>
+
+    <p id="serviceHeroText"></p>
+  </div>
+
+</section>
+
+
+<main class="main">
+
+  <h2 class="section-title">Service Overview</h2>
+
+  <p class="overview" id="serviceOverview"></p>
+
+
+  <div class="info-grid">
+
+    <div class="info-card">
       <h2>What We Provide</h2>
       <ul id="servicePoints"></ul>
+    </div>
 
+
+    <div class="info-card">
       <h2>Professional Process</h2>
       <ol id="serviceProcess"></ol>
     </div>
 
-    <div class="service-request-box">
+  </div>
+
+
+  <!-- FORM -->
+
+  <section class="form-section">
+
+    <div class="form-heading">
       <h2>Request This Service</h2>
-      <p>Apni details submit karein. Hamari team aapki request review karke aapse contact karegi.</p>
 
-      <form id="serviceRequestForm">
+      <p>
+        Please provide your details below. Our professional team
+        will review your request and contact you regarding the next steps.
+      </p>
+    </div>
 
-        <input type="hidden" id="selectedService" name="service">
 
-        <label>Full Name</label>
-        <input type="text" name="name" required>
+    <form id="serviceRequestForm">
 
-        <label>Email Address</label>
-        <input type="email" name="email" required>
+      <input type="hidden" id="selectedService" name="service">
 
-        <label>Phone Number</label>
-        <input type="tel" name="phone" required>
+      <div class="form-grid">
 
-        <label>Subject / Issue</label>
-        <textarea name="message" rows="4" required></textarea>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            required>
+        </div>
 
-        <button type="submit" class="btn btn-primary">
-          Submit Service Request
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required>
+        </div>
+
+
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your phone number"
+            required>
+        </div>
+
+
+        <div class="form-group">
+          <label>Subject / Issue *</label>
+          <input
+            type="text"
+            name="subject"
+            placeholder="Briefly describe your requirement"
+            required>
+        </div>
+
+
+        <div class="form-group full">
+          <label>Additional Details</label>
+
+          <textarea
+            name="message"
+            placeholder="Tell us more about your requirement..."></textarea>
+        </div>
+
+      </div>
+
+
+      <div class="submit-area">
+
+        <button type="submit" class="submit-btn">
+          SUBMIT SERVICE REQUEST →
         </button>
 
-      </form>
-
-      <div id="serviceSuccess" style="display:none;">
-        ✓ Your service request has been submitted successfully.
       </div>
-    </div>
+
+      <div id="successMessage" class="success">
+        ✓ Your service request has been submitted successfully.
+        Our team will contact you shortly.
+      </div>
+
+    </form>
 
   </section>
 
 </main>
 
-<script src="script.js"></script>
+
+<footer>
+  © <span id="year"></span>
+  <strong>OAS Global Corporate Consultants</strong>.
+  All Rights Reserved.
+</footer>
+
 
 <script>
-<script>
-document.querySelectorAll(".service-open").forEach(function(button) {
-    button.addEventListener("click", function() {
 
-        const card = this.closest(".service-card");
-        const service = card.getAttribute("data-service");
+const services = {
 
-        if (service) {
-            window.location.href = "./service-details.html?service=" + service;
-        }
+"ntn-registration":{
+title:"NTN Registration",
+image:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=85",
+overview:"NTN Registration is an essential step for individuals and businesses entering Pakistan's formal tax system. OAS provides professional guidance throughout the registration process.",
+points:[
+"Taxpayer registration guidance",
+"Documentation review",
+"Application preparation",
+"Registration support and follow-up"
+],
+process:[
+"Initial information collection",
+"Review of required documents",
+"Application preparation",
+"Submission and follow-up"
+]
+},
 
-    });
+"income-tax-return":{
+title:"Income Tax Return Filing",
+image:"https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1600&q=85",
+overview:"Professional assistance for preparing and filing income tax returns with proper review of relevant financial information.",
+points:[
+"Income and expense review",
+"Tax calculation assistance",
+"Return preparation",
+"Filing support"
+],
+process:[
+"Collect financial information",
+"Review records",
+"Prepare tax return",
+"Final review and filing"
+]
+},
+
+"sales-tax-registration":{
+title:"Sales Tax Registration",
+image:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=85",
+overview:"Guidance for businesses requiring sales tax registration and assistance with the documentation and application process.",
+points:[
+"Eligibility assessment",
+"Documentation review",
+"Application preparation",
+"Registration assistance"
+],
+process:[
+"Business assessment",
+"Document collection",
+"Application preparation",
+"Submission and follow-up"
+]
+},
+
+"sales-tax-return":{
+title:"Sales Tax Return Filing",
+image:"https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1600&q=85",
+overview:"Professional sales tax return preparation and filing support for businesses requiring accurate periodic compliance.",
+points:[
+"Sales transaction review",
+"Purchase transaction review",
+"Tax reconciliation",
+"Return preparation and filing support"
+],
+process:[
+"Collect sales and purchase records",
+"Verify transactions",
+"Prepare return",
+"Final review and submission"
+]
+},
+
+"company-registration":{
+title:"Company Registration",
+image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=85",
+overview:"Professional assistance for business formation, documentation and company registration requirements.",
+points:[
+"Business structure guidance",
+"Documentation assistance",
+"Registration preparation",
+"Post-registration guidance"
+],
+process:[
+"Business consultation",
+"Structure and documentation review",
+"Application preparation",
+"Registration follow-up"
+]
+},
+
+"secp-compliance":{
+title:"SECP Compliance",
+image:"https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=85",
+overview:"Corporate compliance support designed to help businesses maintain appropriate records and meet applicable regulatory requirements.",
+points:[
+"Compliance review",
+"Corporate documentation",
+"Filing support",
+"Record management"
+],
+process:[
+"Requirement assessment",
+"Document review",
+"Compliance preparation",
+"Filing and follow-up"
+]
+},
+
+"lahore-chamber":{
+title:"Lahore Chamber of Commerce Registration",
+image:"https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85",
+overview:"Guidance for businesses seeking Lahore Chamber of Commerce registration and membership-related assistance.",
+points:[
+"Eligibility guidance",
+"Documentation review",
+"Application preparation",
+"Registration assistance"
+],
+process:[
+"Business assessment",
+"Document verification",
+"Application preparation",
+"Submission support"
+]
+},
+
+"tax-notices":{
+title:"Tax Notices Compliance",
+image:"https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1600&q=85",
+overview:"Professional assistance in reviewing tax notices, understanding requirements and preparing appropriate responses.",
+points:[
+"Notice review",
+"Issue identification",
+"Response preparation",
+"Compliance guidance"
+],
+process:[
+"Notice assessment",
+"Information collection",
+"Response preparation",
+"Submission and follow-up"
+]
+},
+
+"accounting-bookkeeping":{
+title:"Accounting & Bookkeeping Services",
+image:"https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1600&q=85",
+overview:"Organized accounting and bookkeeping support to help businesses maintain accurate and useful financial records.",
+points:[
+"Transaction recording",
+"Ledger management",
+"Account reconciliation",
+"Financial record organization"
+],
+process:[
+"Record collection",
+"Transaction classification",
+"Reconciliation",
+"Regular reporting"
+]
+},
+
+"financial-statements":{
+title:"Financial Statements Preparation",
+image:"https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=85",
+overview:"Preparation and organization of professional financial statements based on available business records.",
+points:[
+"Financial data review",
+"Statement preparation",
+"Account reconciliation",
+"Management reporting"
+],
+process:[
+"Collect records",
+"Verify balances",
+"Prepare statements",
+"Final review"
+]
+},
+
+"stock-count":{
+title:"Weekly & Monthly Stock Count Services",
+image:"https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=85",
+overview:"Structured stock counting services designed to help businesses maintain reliable inventory records and identify variances.",
+points:[
+"Physical stock counting",
+"Inventory reconciliation",
+"Variance identification",
+"Periodic reporting"
+],
+process:[
+"Inventory planning",
+"Physical count",
+"Record comparison",
+"Variance reporting"
+]
+},
+
+"internal-audit":{
+title:"Internal Audit Services",
+image:"https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=85",
+overview:"Professional internal audit support focused on reviewing processes, controls, records and operational efficiency.",
+points:[
+"Control review",
+"Process assessment",
+"Risk identification",
+"Audit reporting"
+],
+process:[
+"Define audit scope",
+"Review records",
+"Testing and assessment",
+"Prepare audit report"
+]
+},
+
+"pseb-registration":{
+title:"PSEB Registration",
+image:"https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=85",
+overview:"Guidance for eligible IT and technology-related businesses seeking PSEB registration and related support.",
+points:[
+"Eligibility guidance",
+"Documentation assistance",
+"Registration support",
+"Follow-up assistance"
+],
+process:[
+"Initial assessment",
+"Document preparation",
+"Application support",
+"Follow-up"
+]
+},
+
+"aop-registration":{
+title:"AOP Registration",
+image:"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=85",
+overview:"Professional assistance for registration and documentation of Associations of Persons.",
+points:[
+"AOP structure guidance",
+"Partner information review",
+"Documentation assistance",
+"Registration support"
+],
+process:[
+"Information collection",
+"Document verification",
+"Application preparation",
+"Registration follow-up"
+]
+}
+
+};
+
+
+/* GET SERVICE FROM URL */
+
+const params = new URLSearchParams(window.location.search);
+const key = params.get("service");
+const service = services[key];
+
+
+/* LOAD SERVICE */
+
+if(service){
+
+document.getElementById("serviceTitle").textContent=service.title;
+
+document.getElementById("serviceHeroText").textContent=service.overview;
+
+document.getElementById("serviceOverview").textContent=service.overview;
+
+document.getElementById("serviceImage").src=service.image;
+
+document.getElementById("serviceImage").alt=service.title;
+
+document.getElementById("selectedService").value=service.title;
+
+document.getElementById("servicePoints").innerHTML=
+service.points.map(item=>`<li>${item}</li>`).join("");
+
+document.getElementById("serviceProcess").innerHTML=
+service.process.map(item=>`<li>${item}</li>`).join("");
+
+document.title=service.title+" | OAS Global Corporate Consultants";
+
+}
+
+
+/* FORM */
+
+document.getElementById("serviceRequestForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const button=this.querySelector(".submit-btn");
+
+button.textContent="SUBMITTING...";
+
+setTimeout(()=>{
+
+this.style.display="none";
+
+document.getElementById("successMessage").style.display="block";
+
+},700);
+
 });
+
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
 </script>
 
 </body>
