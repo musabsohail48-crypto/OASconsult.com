@@ -3582,3 +3582,186 @@ ol {
         height: 300px !important;
     }
 }
+   /* =========================================================
+   FINAL ABOUT + CONTACT FIX
+========================================================= */
+
+.about-contact-section{
+    width:100% !important;
+    max-width:none !important;
+    min-height:auto !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    gap:60px !important;
+    padding:90px 7% !important;
+    background:#080808 !important;
+    color:#fff !important;
+    overflow:hidden !important;
+}
+
+.about-contact-section .about-part,
+.about-contact-section .contact-part{
+    width:100% !important;
+    max-width:620px !important;
+    min-width:0 !important;
+}
+
+.about-contact-section .section-heading{
+    margin-bottom:28px !important;
+}
+
+.about-contact-section .section-heading span{
+    color:#d4af37 !important;
+    font-size:11px !important;
+    font-weight:700 !important;
+    letter-spacing:3px !important;
+}
+
+.about-contact-section .section-heading h2{
+    color:#fff !important;
+    font-size:40px !important;
+    line-height:1.15 !important;
+    margin:8px 0 0 !important;
+}
+
+.about-contact-section .about-part > h3{
+    color:#d4af37 !important;
+    font-size:24px !important;
+    margin-bottom:18px !important;
+}
+
+.about-contact-section p{
+    color:#aaa !important;
+    line-height:1.8 !important;
+}
+
+.consultants-row{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:18px !important;
+    margin-top:30px !important;
+}
+
+.consultant-card{
+    width:100% !important;
+    min-width:0 !important;
+    background:#121212 !important;
+    border:1px solid rgba(212,175,55,.25) !important;
+    border-radius:10px !important;
+    padding:22px !important;
+    overflow:hidden !important;
+}
+
+.consultant-avatar{
+    width:50px !important;
+    height:50px !important;
+    min-width:50px !important;
+    border-radius:50% !important;
+    background:#d4af37 !important;
+    color:#080808 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-weight:800 !important;
+    margin-bottom:12px !important;
+}
+
+.consultant-card h3{
+    color:#fff !important;
+    font-size:17px !important;
+}
+
+.consultant-card strong{
+    color:#d4af37 !important;
+    display:block !important;
+}
+
+.consultant-card a{
+    color:#ddd !important;
+    display:block !important;
+    margin-top:8px !important;
+}
+
+.contact-details{
+    width:100% !important;
+    display:grid !important;
+    gap:16px !important;
+}
+
+.contact-item{
+    width:100% !important;
+    background:#121212 !important;
+    border:1px solid rgba(212,175,55,.2) !important;
+    border-radius:9px !important;
+    padding:19px !important;
+}
+
+.contact-item strong{
+    color:#d4af37 !important;
+    display:block !important;
+    font-size:11px !important;
+    letter-spacing:2px !important;
+    margin-bottom:7px !important;
+}
+
+.contact-item a,
+.contact-item p{
+    color:#ccc !important;
+    font-size:14px !important;
+}
+
+.map-container{
+    width:100% !important;
+    height:260px !important;
+    margin-top:22px !important;
+    border:1px solid rgba(212,175,55,.3) !important;
+    border-radius:10px !important;
+    overflow:hidden !important;
+}
+
+.map-container iframe{
+    width:100% !important;
+    height:100% !important;
+    border:0 !important;
+}
+
+
+/* IMPORTANT — ABOUT/CONTACT KE ANDAR
+   KOI BHI IMAGE SCREEN SE BAHAR NA JAYE */
+
+.about-contact-section img{
+    max-width:100% !important;
+    width:auto !important;
+    height:auto !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .about-contact-section{
+        display:block !important;
+        width:100% !important;
+        padding:65px 20px !important;
+    }
+
+    .about-contact-section .about-part,
+    .about-contact-section .contact-part{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    .contact-part{
+        margin-top:55px !important;
+    }
+
+    .consultants-row{
+        grid-template-columns:1fr !important;
+    }
+
+    .about-contact-section .section-heading h2{
+        font-size:32px !important;
+    }
+
+}
