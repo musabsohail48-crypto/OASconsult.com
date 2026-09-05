@@ -1990,6 +1990,20 @@
 
 })();
 </script>
+                <script>
+document.querySelectorAll(".service-open").forEach(function(button) {
+    button.addEventListener("click", function() {
+
+        const card = this.closest(".service-card");
+        const service = card.getAttribute("data-service");
+
+        if (service) {
+            window.location.href = "./service-details.html?service=" + service;
+        }
+
+    });
+});
+</script>
 
 </body>
 </html>
