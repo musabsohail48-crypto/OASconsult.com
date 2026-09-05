@@ -1518,55 +1518,64 @@
 
             <!-- SECURE QUESTION PORTAL -->
 
-            <div class="faq-client-panel">
+          <div class="faq-question-box">
 
-                <div class="lock-badge">
-                    <span>🔒</span>
-                    Client Question Portal
-                </div>
+    <div id="faqLoginStep">
+        <span class="faq-mini-title">NEED MORE INFORMATION?</span>
+        <h3>Have a Specific Question?</h3>
+        <p>Login first to securely submit your question to our professional team.</p>
 
-                <h3>
-                    Have a Specific Question?
-                </h3>
+        <button id="faqLoginBtn" class="btn btn-primary">
+            LOGIN TO ASK A QUESTION →
+        </button>
+    </div>
 
-                <p>
-                    For client-specific questions, login first
-                    using your username, password and security
-                    verification.
-                </p>
 
-                <div class="secure-features">
+    <div id="faqCaptchaStep" style="display:none;">
+        <span class="faq-mini-title">SECURITY VERIFICATION</span>
+        <h3>Verify Your Account</h3>
+        <p>Please complete the verification before submitting your question.</p>
 
-                    <div>
-                        <span>✓</span>
-                        Secure Login
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        CAPTCHA Verification
-                    </div>
-
-                    <div>
-                        <span>✓</span>
-                        Client Question Form
-                    </div>
-
-                </div>
-
-                <button
-                    type="button"
-                    class="btn btn-primary full-width"
-                    id="openLoginBtn"
-                >
-                    Login to Ask a Question
-                </button>
-
-            </div>
-
+        <div class="captcha-box">
+            <span id="captchaQuestion"></span>
+            <input type="number" id="captchaAnswer" placeholder="Enter answer">
+            <button type="button" id="verifyCaptcha" class="btn btn-primary">
+                VERIFY
+            </button>
         </div>
 
+        <p id="captchaError" class="captcha-error"></p>
     </div>
+
+
+    <div id="faqQuestionStep" style="display:none;">
+        <span class="faq-mini-title">ASK OUR TEAM</span>
+        <h3>Submit Your Question</h3>
+
+        <form id="questionForm">
+
+            <input
+                type="text"
+                id="questionSubject"
+                placeholder="Subject"
+                required>
+
+            <textarea
+                id="questionText"
+                placeholder="Write your question..."
+                rows="5"
+                required></textarea>
+
+            <button type="submit" class="btn btn-primary">
+                SUBMIT QUESTION →
+            </button>
+
+        </form>
+
+        <p id="questionSuccess" class="question-success"></p>
+    </div>
+
+</div>
 
 </section>
 
@@ -2002,6 +2011,149 @@ document.querySelectorAll(".service-open").forEach(function(button) {
         }
 
     });
+});
+</script>
+                <script>
+/* ================= FAQ LOGIN SYSTEM ================= */
+
+const faqLoginBtn = document.getElementById("faqLoginBtn");
+
+if (faqLoginBtn) {
+
+    faqLoginBtn.addEventListener("click", function () {
+
+        const username = prompt("Enter your username:");
+        if (!username) return;
+
+        const password = prompt("Enter your password:");
+        if (!password) return;
+
+        fetch("/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            if (!data.token) {
+                alert(data.message || "Login failed. Please check your credentials.");
+                return;
+            }
+
+            sessionStorage.setItem("oasAuthToken", data.token);
+
+            document.getElementById("faqLoginStep").style.display = "none";
+            document.getElementById("faqCaptchaStep").style.display = "block";
+
+            createFAQCaptcha();
+
+        })
+        .catch(() => {
+            alert("Unable to connect to the server. Please try again.");
+        });
+
+    });
+}
+
+
+/* CAPTCHA */
+
+let captchaResult = 0;
+
+function createFAQCaptcha() {
+
+    const a = Math.floor(Math.random() * 9) + 1;
+    const b = Math.floor(Math.random() * 9) + 1;
+
+    captchaResult = a + b;
+
+    document.getElementById("captchaQuestion").textContent =
+        "What is " + a + " + " + b + " ?";
+}
+
+
+document.getElementById("verifyCaptcha")?.addEventListener("click", function () {
+
+    const answer =
+        Number(document.getElementById("captchaAnswer").value);
+
+    if (answer !== captchaResult) {
+
+        document.getElementById("captchaError").textContent =
+            "Incorrect answer. Please try again.";
+
+        createFAQCaptcha();
+        document.getElementById("captchaAnswer").value = "";
+
+        return;
+    }
+
+    document.getElementById("captchaError").textContent = "";
+
+    document.getElementById("faqCaptchaStep").style.display = "none";
+    document.getElementById("faqQuestionStep").style.display = "block";
+
+});
+
+
+/* QUESTION SUBMIT */
+
+document.getElementById("questionForm")?.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const token = sessionStorage.getItem("oasAuthToken");
+
+    if (!token) {
+        alert("Please login first.");
+        return;
+    }
+
+    const subject = document.getElementById("questionSubject").value;
+    const question = document.getElementById("questionText").value;
+
+    try {
+
+        const response = await fetch("/api/questions", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+
+            body: JSON.stringify({
+                subject: subject,
+                question: question
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || "Question submission failed.");
+        }
+
+        document.getElementById("questionSuccess").textContent =
+            "✓ Your question has been submitted successfully.";
+
+        document.getElementById("questionForm").reset();
+
+    } catch(error) {
+
+        document.getElementById("questionSuccess").textContent =
+            "Unable to submit question. Please try again.";
+
+    }
+
 });
 </script>
 
