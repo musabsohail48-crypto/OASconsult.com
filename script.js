@@ -397,18 +397,13 @@ document.querySelectorAll(".service-open").forEach(button => {
 
     const card = this.closest(".service-card");
     const serviceKey = card?.dataset.service;
-    const service = serviceDetails[serviceKey];
 
-    if (!service) {
-      alert("Service details are currently unavailable.");
-      return;
-    }
-
-    sessionStorage.setItem("selectedService", JSON.stringify(service));
+    if (!serviceKey) return;
 
     window.location.href =
       "service-details.html?service=" +
       encodeURIComponent(serviceKey);
+
   });
 });
                /* =====================================================
