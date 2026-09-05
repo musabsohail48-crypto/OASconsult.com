@@ -159,22 +159,24 @@
                 Appointment
             </a>
 
-            <a
-                href="#about"
-                class="nav-link"
-            >
-                About Us
-            </a>
+            <a href="#about-contact" class="nav-link">
+    About Us
+</a>
 
             <a
                 href="#contact"
                 class="nav-link"
             >
-                
-                
+                Contact Us
+            </a>
+
+        </nav>
+
+    </div>
 
 </header>
-
+                
+            
 
 <main>
 
@@ -287,6 +289,13 @@
             </div>
 
         </div>
+
+        </div>
+
+    </div>
+
+    <!-- SLIDER CONTROLS -->
+    <div class="hero-controls">
 
 
         
@@ -1340,10 +1349,7 @@
                         and identify the appropriate service.
                     </p>
 
-                    <a
-                        href="#contact"
-                        class="text-link"
-                    >
+                <a href="#about-contact" class="text-link">
                         Contact Us →
                     </a>
 
@@ -1575,14 +1581,13 @@
 </section>
 
 
+
+
 <!-- =========================================================
      APPOINTMENT
 ========================================================= -->
 
-<section
-    class="section appointment-section"
-    id="appointment"
->
+<section class="section appointment-section" id="appointment">
 
     <div class="container">
 
@@ -1601,32 +1606,25 @@
 
                 <p>
                     Tell us about your requirement and choose
-                    a preferred date and time. Our team can
-                    review your request and respond accordingly.
+                    your preferred date. Our team will review
+                    your request and respond accordingly.
                 </p>
-
 
                 <div class="appointment-points">
 
                     <div>
                         <span>01</span>
-                        <p>
-                            No login required
-                        </p>
+                        <p>No login required</p>
                     </div>
 
                     <div>
                         <span>02</span>
-                        <p>
-                            Share your preferred schedule
-                        </p>
+                        <p>Choose your preferred date</p>
                     </div>
 
                     <div>
                         <span>03</span>
-                        <p>
-                            Describe your requirement clearly
-                        </p>
+                        <p>Describe your requirement clearly</p>
                     </div>
 
                 </div>
@@ -1637,9 +1635,8 @@
             <div class="appointment-form-wrapper">
 
                 <form
-                    class="appointment-form"
                     id="appointmentForm"
-                    novalidate
+                    class="appointment-form"
                 >
 
                     <div class="form-header">
@@ -1655,83 +1652,103 @@
                     </div>
 
 
-                   <div class="form-actions">
+                    <div class="form-grid">
 
-  
-                    </form>
+                        <div class="form-group">
+                            <label for="appointmentName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="appointmentName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
 
 
-                      <form id="appointmentForm" class="appointment-form">
+                        <div class="form-group">
+                            <label for="appointmentEmail">
+                                Email Address
+                            </label>
 
-    <div class="form-grid">
+                            <input
+                                type="email"
+                                id="appointmentEmail"
+                                name="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+                        </div>
 
-        <div class="form-group">
-            <label for="appointmentName">Full Name</label>
-            <input
-                type="text"
-                id="appointmentName"
-                name="name"
-                placeholder="Enter your full name"
-                autocomplete="name"
-                required
-            >
-        </div>
 
-        <div class="form-group">
-            <label for="appointmentEmail">Email Address</label>
-            <input
-                type="email"
-                id="appointmentEmail"
-                name="email"
-                placeholder="Enter your email"
-                autocomplete="email"
-                required
-            >
-        </div>
+                        <div class="form-group">
+                            <label for="appointmentPhone">
+                                Phone Number
+                            </label>
 
-        <div class="form-group">
-            <label for="appointmentPhone">Phone Number</label>
-            <input
-                type="tel"
-                id="appointmentPhone"
-                name="phone"
-                placeholder="03XX-XXXXXXX"
-                autocomplete="tel"
-                required
-            >
-        </div>
+                            <input
+                                type="tel"
+                                id="appointmentPhone"
+                                name="phone"
+                                placeholder="03XX-XXXXXXX"
+                                required
+                            >
+                        </div>
 
-        <div class="form-group">
-            <label for="appointmentSubject">Subject / Issue</label>
-            <input
-                type="text"
-                id="appointmentSubject"
-                name="subject"
-                placeholder="e.g. NTN, Tax Return, SECP..."
-                required
-            >
-        </div>
 
-        <div class="form-group">
-            <label for="appointmentDate">Preferred Date</label>
-            <input
-                type="date"
-                id="appointmentDate"
-                name="date"
-                required
-            >
+                        <div class="form-group">
+                            <label for="appointmentSubject">
+                                Subject / Issue
+                            </label>
+
+                            <input
+                                type="text"
+                                id="appointmentSubject"
+                                name="subject"
+                                placeholder="e.g. NTN, Tax Return, SECP..."
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="appointmentDate">
+                                Preferred Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="appointmentDate"
+                                name="date"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Request Appointment
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
 
     </div>
-
-    <div class="form-actions">
-        <button type="submit" class="btn btn-primary">
-            Request Appointment
-            <span>→</span>
-        </button>
-    </div>
-
-</form>
 
 </section>
 
@@ -2281,7 +2298,7 @@ document.getElementById("questionForm")?.addEventListener("submit", async functi
     <div class="footer-main">
 
         <div class="footer-brand">
-            <img src="./assets/oas-logo.jpg" alt="OAS Global Corporate Consultants">
+            <img src="oas-logo.jpg" alt="OAS Global Corporate Consultants">
 
             <p>
                 OAS Global Corporate Consultants provides professional
